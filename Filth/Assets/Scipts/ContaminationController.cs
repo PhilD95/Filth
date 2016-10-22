@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ContaminationController: MonoBehaviour {
+public class ContaminationController : MonoBehaviour {
+
+	[SerializeField] SprayController spray;
 
 	private float contaminationValue = 0.0f;
 
@@ -30,6 +32,6 @@ public class ContaminationController: MonoBehaviour {
 	}
 
 	public void addContamination(float value) {
-		contaminationValue += value;
+		contaminationValue += spray.getContaminationFactor() * value;
 	}
 }
