@@ -32,6 +32,6 @@ public class ContaminationController : MonoBehaviour {
 	}
 
 	public void addContamination(float value) {
-		contaminationValue += spray.getContaminationFactor() * value;
+		contaminationValue += /*spray.getContaminationFactor() **/ value;
 	}
 }
