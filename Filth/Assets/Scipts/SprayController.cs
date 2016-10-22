@@ -21,7 +21,7 @@ public class SprayController : MonoBehaviour
         capacity = 100.0f;
         level = capacity;
         dose_amount = 60.0f;
-        charge_rate = 2.0f;
+        charge_rate = 6.0f;
 
         effect_duration = 200;
     }
@@ -33,6 +33,7 @@ public class SprayController : MonoBehaviour
         power = 1.0f;
         fired = false;
         overheated = false;
+		setDebugValues ();
     }
 
     // Update is called once per frame
@@ -50,14 +51,15 @@ public class SprayController : MonoBehaviour
             }
         }
 
-
-        if (level < capacity)
+		if (level < capacity)
         {
             level += charge_rate;
+			Debug.Log (level);
             if (level > capacity)
             {
                 level = capacity;
-                overheated = false;
+				overheated = false;
+				fired = false;
             }
         }
     }
@@ -78,6 +80,7 @@ public class SprayController : MonoBehaviour
             overheated = true;
         }
 
+		last_fired_framecount = Time.frameCount;
         fired = true;
         return true;
     }
