@@ -18,7 +18,7 @@ public class ContaminationController: MonoBehaviour {
 	void Update () {
 	}
 
-	void addContamination(float value) {
+	public void addContamination(float value) {
 		contaminationValue += value;
 	}
 }
