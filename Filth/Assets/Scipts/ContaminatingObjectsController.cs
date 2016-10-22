@@ -4,7 +4,7 @@ using System;
 public class ContaminatingObjectsController : MonoBehaviour {
 
     [SerializeField] GameObject player;
-    [SerializeField] ContaminationController contamination_controller;
+    [SerializeField] GameObject GameCore;
 
     ContaminatingObjectsType contamination_type;
     
@@ -25,7 +25,7 @@ public class ContaminatingObjectsController : MonoBehaviour {
         float distancetoplayer = (float)Math.Sqrt((Math.Pow(selfpos.y - playerpos.y, 2) + Math.Pow(selfpos.x - playerpos.x, 2)));
         if (distancetoplayer <= contamination_type.getRange()) {
             float decayfactor = (distancetoplayer / contamination_type.getRange()) * contamination_type.getDecay();
-            contamination_controller.addContamination(contamination_type.getStrength() * decayfactor);
+// contamination_controller.addContamination(contamination_type.getStrength() * decayfactor);
         }
 	}
 }
