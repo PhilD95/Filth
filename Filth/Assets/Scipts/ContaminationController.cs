@@ -4,7 +4,6 @@ using System.Collections;
 public class ContaminationController: MonoBehaviour {
 
 	private float contaminationValue = 0.0f;
-	private int stepsSinceDebug = 0;
 
 	public float ContaminationValue {
 		get { return contaminationValue; }
