@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectController : MonoBehaviour {
+public class ContaminatingObjectsController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
