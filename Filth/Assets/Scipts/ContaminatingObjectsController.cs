@@ -26,7 +26,7 @@ public class ContaminatingObjectsController : MonoBehaviour {
         {
             float decayfactor = (float)(decay * (1.0 - (distancetoplayer / range)));
             contamination_controller.addContamination(strength - (strength * decayfactor));
-            Debug.Log("contaminate from " + name + ": " + (strength * decayfactor));
+            Debug.Log("contaminate from " + name + ": " + (strength - (strength * decayfactor)));
         }
 	}
 }
