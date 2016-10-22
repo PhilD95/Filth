@@ -12,8 +12,8 @@ public class SprayController : MonoBehaviour
     int last_fired_framecount; // when was it last fired
     int effect_duration; // how many frames does one effect last
 
-    private bool fired;
-    private bool overheated;
+    private bool fired; // whether the spray has been fired and is currently in effect
+    private bool overheated; // if the level as gone below 0.0 the spray overheats and cant be used till full capacity again
     private float level; // current amount of spray
 
     void setDebugValues()
@@ -28,6 +28,7 @@ public class SprayController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log("In spray init");
         last_fired_framecount = 0;
         power = 1.0f;
         fired = false;
