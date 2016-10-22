@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
 
         if (spray_controller.isFired() == true)
         {
-            animation_type += "_spray";
+			animation_type = "front_spray";
         }
 
         animator.Play(animation_type);
