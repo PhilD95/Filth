@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	const float speed = 1.0f;
+	[SerializeField] float speed = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0.0f);
 		gameObject.transform.position += movement;
 
 		/*
