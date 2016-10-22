@@ -5,9 +5,11 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField] float speed = 1.0f;
 
+	Rigidbody2D rb;
+
 	// Use this for initialization
 	void Start () {
-	
+		rb = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -20,12 +22,10 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0.0f);
-		gameObject.transform.position += movement;
+		Vector3 movement = speed * new Vector3 (moveHorizontal, moveVertical, 0.0f);
+		rb.velocity = movement;
 
 		/*
-		rigidbody.velocity = movement * speed;
-
 		rigidbody.position = new Vector3 
 			(
 				Mathf.Clamp (rigidbody.position.x, boundary.xMin, boundary.xMax), 
