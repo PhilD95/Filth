@@ -93,4 +93,14 @@ public class SprayController : MonoBehaviour
     {
         return level / capacity;
     }
+
+    // returns the spray effect as a factor to be multiplied by the current contamination
+    public float getContaminationFactor()
+    {
+        if (isFired())
+        {
+            return 1.0f - power;
+        }
+        return 1.0f;
+    }
 }
