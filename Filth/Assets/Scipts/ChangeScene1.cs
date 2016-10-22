@@ -14,8 +14,8 @@ public class ChangeScene1 : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter (Collider other){
-		SceneManager.LoadScene ("Scene_2", LoadSceneMode.Additive);
+	void OnTriggerEnter2D (Collider2D other){
+		SceneManager.LoadScene ("Scene_2", LoadSceneMode.Single);
 
 	}
 }
