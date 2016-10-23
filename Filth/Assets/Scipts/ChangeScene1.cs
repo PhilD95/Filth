@@ -15,7 +15,8 @@ public class ChangeScene1 : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
-		SceneManager.LoadScene ("Scene_2", LoadSceneMode.Single);
-
+		if (other.CompareTag("Player")) {
+			SceneManager.LoadScene ("Scene_2", LoadSceneMode.Single);
+		}
 	}
 }
