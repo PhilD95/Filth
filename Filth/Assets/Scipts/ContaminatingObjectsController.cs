@@ -3,8 +3,7 @@ using System;
 
 public class ContaminatingObjectsController : MonoBehaviour {
 
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject gamecore;
+    GameObject player;
     ContaminationController contamination_controller;
 
     public string name; // display name
@@ -14,7 +13,10 @@ public class ContaminatingObjectsController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        contamination_controller = gamecore.GetComponent<ContaminationController>();
+		player = GameObject.FindWithTag("Player");
+
+		GameObject gameController = GameObject.FindWithTag("GameController");
+		contamination_controller = gameController.GetComponent<ContaminationController>();
 	}
 
     // Update is called once per frame

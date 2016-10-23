@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ContaminationController : MonoBehaviour {
 
-	[SerializeField] SprayController spray;
+	//[SerializeField] SprayController spray;
 
 	private float contaminationValue = 0.0f;
 
@@ -24,7 +24,7 @@ public class ContaminationController : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if (Application.isEditor)  // or check the app debug flag
+		if (Debug.isDebugBuild)
 		{
 			Rect debugTextRect = new Rect (new Vector2 (10, 10), new Vector2 (400, 40));
 			GUI.Label(debugTextRect, "Contamination: " + contaminationValue);
